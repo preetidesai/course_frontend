@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+.upper-section,
+.lower-section {
+  margin-bottom: 30px;
+}
+
+.add-course-form,
+.add-instance-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-course-form input,
+.add-course-form textarea,
+.add-instance-form input,
+.add-instance-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #007bff;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.list-courses-btn,
+.list-instances-btn {
+  
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.list-courses-btn:hover,
+.list-instances-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Flexbox layout for forms in one div */
+.forms-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.form-section {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-section:last-child {
+  margin-right: 0;
+}
+
+/* Additional styling for form groups */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.ms-2 {
+  margin-left: 8px;
+}
