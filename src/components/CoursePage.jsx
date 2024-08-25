@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CourseList from './CourseList'; // Adjust path if needed
-import AddInstanceForm from './AddInstanceForm'; // Adjust path if needed
-import InstanceList from './InstanceList'; // Adjust path if needed
+import CourseList from './CourseList'; 
+import AddInstanceForm from './AddInstanceForm'; 
+import InstanceList from './InstanceList'; 
 
 const CoursePage = () => {
     const [courses, setCourses] = useState([]);
@@ -10,7 +10,7 @@ const CoursePage = () => {
     const [year, setYear] = useState('');
     const [semester, setSemester] = useState('');
 
-    // Fetch courses on component mount
+    
     useEffect(() => {
         const fetchCourses = async () => {
             try {
@@ -24,7 +24,7 @@ const CoursePage = () => {
         fetchCourses();
     }, []);
 
-    // Fetch instances when year or semester changes
+    
     useEffect(() => {
         const fetchInstances = async () => {
             if (year && semester) {
@@ -40,7 +40,7 @@ const CoursePage = () => {
         fetchInstances();
     }, [year, semester]);
 
-    // Handler for adding an instance
+    
     const handleAddInstance = async (newInstance) => {
         try {
             await axios.post('http://localhost:9090/api/instances', {
@@ -49,7 +49,7 @@ const CoursePage = () => {
                 semester: newInstance.semester
             });
 
-            // Refresh instances list after adding a new instance
+            
             setYear(newInstance.year);
             setSemester(newInstance.semester);
         } catch (error) {
@@ -57,7 +57,7 @@ const CoursePage = () => {
         }
     };
 
-    // Handler for refreshing courses
+    
     const handleRefreshCourses = async () => {
         try {
             const response = await axios.get('http://localhost:9090/api/courses');
@@ -75,7 +75,7 @@ const CoursePage = () => {
                 onAddInstance={handleAddInstance} 
                 onRefreshCourses={handleRefreshCourses}
             />
-            <InstanceList instances={instances} /> {/* Updated to use instances state */}
+            <InstanceList instances={instances} /> 
             <CourseList courses={courses} />
         </div>
     );

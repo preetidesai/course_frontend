@@ -14,7 +14,7 @@ const AddCourseForm = ({ onAddCourse }) => {
                 code: courseCode,
                 description: courseDescription
             });
-            onAddCourse(response.data); 
+            onAddCourse(response.data);  
             setCourseTitle('');
             setCourseCode('');
             setCourseDescription('');
